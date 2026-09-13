@@ -1,0 +1,405 @@
+<!DOCTYPE html><html class="light" lang="ko" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ATELIER AI - 퍼스널 스타일링</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#fbf9f5",
+            "secondary-fixed": "#ffdbcd",
+            "surface-bright": "#fbf9f5",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#f9e0a7",
+            "inverse-primary": "#c8c6c5",
+            "primary-fixed-dim": "#c8c6c5",
+            "on-primary-fixed-variant": "#474646",
+            "secondary-fixed-dim": "#ffb596",
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#444748",
+            "on-secondary-container": "#752d03",
+            "surface-variant": "#e4e2de",
+            "primary-container": "#1c1b1b",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#dbc48d",
+            "secondary": "#98471d",
+            "on-error-container": "#93000a",
+            "error-container": "#ffdad6",
+            "tertiary": "#000000",
+            "surface-tint": "#5f5e5e",
+            "on-primary-container": "#858383",
+            "on-secondary-fixed-variant": "#7a3006",
+            "inverse-surface": "#30312e",
+            "surface-dim": "#dbdad6",
+            "on-secondary-fixed": "#360f00",
+            "primary": "#000000",
+            "outline": "#747878",
+            "surface-container-high": "#eae8e4",
+            "surface-container-low": "#f5f3ef",
+            "on-tertiary-fixed-variant": "#55451a",
+            "on-error": "#ffffff",
+            "on-primary-fixed": "#1c1b1b",
+            "on-surface": "#1b1c1a",
+            "surface-container-lowest": "#ffffff",
+            "outline-variant": "#c4c7c7",
+            "secondary-container": "#fe9666",
+            "background": "#fbf9f5",
+            "tertiary-container": "#241a00",
+            "on-background": "#1b1c1a",
+            "surface-container-highest": "#e4e2de",
+            "surface-container": "#efeeea",
+            "on-tertiary-container": "#958251",
+            "on-secondary": "#ffffff",
+            "primary-fixed": "#e5e2e1",
+            "inverse-on-surface": "#f2f0ed",
+            "on-tertiary-fixed": "#241a00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-2xs": "0.25rem",
+            "space-3xl": "3.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.5rem",
+            "space-lg": "1.5rem",
+            "stack-gap": "1.5rem",
+            "space-2xl": "2.5rem",
+            "space-sm": "0.75rem",
+            "card-gap": "0.875rem",
+            "screen-edge": "1.25rem",
+            "space-xl": "2rem"
+          },
+          "fontFamily": {
+            "label-md": ["Plus Jakarta Sans"],
+            "display-sm": ["Bodoni Moda"],
+            "headline-lg": ["Bodoni Moda"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Bodoni Moda"],
+            "headline-md": ["Bodoni Moda"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Bodoni Moda"],
+            "body-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-md": ["11px", {"lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+            "display-sm": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+            "headline-lg": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+            "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "500"}],
+            "label-sm": ["9px", {"lineHeight": "12px", "letterSpacing": "0.14em", "fontWeight": "700"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-secondary selection:text-on-secondary min-h-screen">
+<div class="relative max-w-md mx-auto min-h-screen bg-surface flex flex-col pb-24 shadow-2xl overflow-x-hidden">
+<!-- TopAppBar (Shared Component JSON) -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-screen-edge h-14 max-w-md mx-auto bg-surface/90 dark:bg-surface-container-lowest/90 backdrop-blur-md border-b border-surface-variant dark:border-outline-variant/20">
+<button aria-label="Menu" class="text-primary dark:text-inverse-primary hover:text-secondary transition-colors duration-150 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+</button>
+<span class="font-display-sm text-display-sm tracking-widest text-primary dark:text-inverse-primary uppercase text-lg">
+        ATELIER AI
+      </span>
+<button aria-label="Bookmark" class="text-primary dark:text-inverse-primary hover:text-secondary transition-colors duration-150 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[22px]">bookmark</span>
+</button>
+</header>
+<!-- Main Editorial Content Canvas -->
+<main class="pt-16 flex-1 flex flex-col">
+<!-- Editorial Hero Section -->
+<section class="px-screen-edge pt-space-md pb-space-lg flex flex-col">
+<div class="flex items-center gap-2 mb-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary/10 border border-secondary/30 text-secondary font-label-sm text-label-sm tracking-wider uppercase">
+<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+            HAUTE COUTURE INTELLIGENCE
+          </span>
+<span class="text-[10px] tracking-widest text-on-surface-variant/70 font-label-sm uppercase">FW 2025 EDIT</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight mb-2 leading-tight">
+          당신의 체형과 분위기에 맞춘<br>
+<span class="italic font-display-sm">단 하나의</span> AI 퍼스널 스타일링
+        </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg leading-relaxed">
+          사진 한 장, 키·몸무게 입력으로 30초 만에 분석하는 나만의 황금비율 핏과 프라이빗 룩북 컬렉션.
+        </p>
+<!-- Visual Hero Card with Couture Aesthetic -->
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-space-lg border border-surface-variant bg-surface-container-low shadow-[0px_8px_24px_-4px_rgba(17,17,17,0.04)] group">
+<img class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" data-alt="Editorial fashion full-body photography of a stylish modern Asian or European young woman wearing a chic, relaxed casual outfit: an oversized cozy knit sweater or casual trench jacket, high-waisted relaxed straight-leg denim trousers or neutral chinos, minimal white sneakers or stylish flat loafers, holding a casual leather shoulder bag. Warm soft daylight, high-end architecture gallery or minimalist street background, elegant natural lighting, Vogue/Kinfolk editorial mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNJzWBbgHQeyddr8ojBuw0YIF_cEE_US3xLz84vLKp-XbdOnOce7s7bOnUJqN3e1SS1eLpt9fccpIBDRWuR35QDJhOoSaGTCYpUKWDFwDEgcvsNYVISz340baBKHepjS9liksk2O_xAHBGJIBxqGEpKm9hkuJ9YbowJgE-UaYIIGu3Xhv6H6pqxqMVNGzaq-yjtb81j--voP7lP5X11DAL42FVYD1JpjxKeGAqbw9JezOav1lDKobm0Q">
+<!-- Floating Editorial Scrim Overlay -->
+<div class="absolute inset-x-3 bottom-3 p-3.5 rounded-lg bg-surface/85 backdrop-blur-md border border-white/60 shadow-[0px_2px_8px_rgba(17,17,17,0.06)] flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold tracking-widest">AI BODY RATIO SPEC</span>
+<span class="text-[10px] font-label-md text-on-surface-variant font-semibold">99.2% ACCURACY</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm text-primary">슬림 스트레이트 실루엣</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Type S-04</span>
+</div>
+<div class="flex gap-1.5 mt-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-[9px]">어깨각도 16.5°</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-[9px]">상하지비율 1:1.62</span>
+<span class="px-2 py-0.5 rounded bg-secondary/15 text-secondary font-label-sm text-[9px] font-semibold">골격 내추럴</span>
+</div>
+</div>
+</div>
+<!-- High-contrast Primary CTA -->
+<button class="w-full h-[52px] rounded-full bg-primary text-surface font-body-md font-semibold flex items-center justify-center gap-2 shadow-[0px_12px_28px_-6px_rgba(0,0,0,0.35)] active:scale-[0.98] transition-all duration-150 hover:bg-neutral-900 group">
+<span class="">30초 만에 맞춤 스타일 찾기</span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-150 group-hover:translate-x-0.5">arrow_forward</span>
+</button>
+</section>
+<!-- Stats / Social Proof Strip -->
+<section class="border-y border-surface-variant bg-surface-container-low/60 py-3.5 px-screen-edge">
+<div class="grid grid-cols-2 divide-x divide-surface-variant">
+<div class="flex flex-col items-center pr-2">
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight">142,000+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-0.5">누적 스타일 분석</span>
+</div>
+<div class="flex flex-col items-center pl-2">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight">98.4%</span>
+<span class="material-symbols-outlined text-secondary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-0.5">스타일링 만족도</span>
+</div>
+</div>
+</section>
+<!-- Feature Highlights (Bento Grid Style) -->
+<section class="px-screen-edge py-space-xl flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold">ATELIER INTELLIGENCE</span>
+<h2 class="font-headline-md text-headline-md text-primary mt-0.5">독보적인 AI 큐레이션 솔루션</h2>
+</div>
+<span class="font-display-sm text-primary/20 text-3xl font-light">01</span>
+</div>
+<div class="space-y-card-gap">
+<!-- Card 1 -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-surface-variant shadow-[0px_8px_24px_-4px_rgba(17,17,17,0.04)] flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 text-secondary border border-secondary/20">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">straighten</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline-sm text-[16px] text-primary">체형 황금비율 정밀 분석</h3>
+<span class="font-label-sm text-[9px] px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">VISION AI</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                어깨 너비, 흉곽 둘레, 다리 길이 비율을 mm 단위 알고리즘으로 측정하여 가장 우아한 골격 실루엣을 찾아냅니다.
+              </p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-surface-variant shadow-[0px_8px_24px_-4px_rgba(17,17,17,0.04)] flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center shrink-0 text-primary border border-surface-variant">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline-sm text-[16px] text-primary">TPO별 맞춤 룩북</h3>
+<span class="font-label-sm text-[9px] px-1.5 py-0.5 rounded bg-secondary/10 text-secondary font-semibold">DAILY UPDATE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                오늘의 날씨, 출근 회의, 주말 전시회 데이트까지 매일 아침 고민 없는 완벽한 풀착장 코디네이션을 제안합니다.
+              </p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-surface-variant shadow-[0px_8px_24px_-4px_rgba(17,17,17,0.04)] flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center shrink-0 text-primary border border-surface-variant">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-headline-sm text-[16px] text-primary">실패 없는 쇼핑 가이드</h3>
+<span class="font-label-sm text-[9px] px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant">FIT GUARANTEE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                반품 걱정 끝. 내 체형에 실제로 들어맞는 기장감, 네크라인 깊이, 팬츠 밑단 너비를 정확히 짚어줍니다.
+              </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Lookbook Carousel Section (20% peek edge bleed) -->
+<section class="py-space-md flex flex-col">
+<div class="px-screen-edge flex items-end justify-between mb-3">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold">CURATED LOOKBOOK</span>
+<h2 class="font-headline-md text-headline-md text-primary mt-0.5">이번 주 AI 추천 에디션</h2>
+</div>
+<button class="font-label-md text-label-md text-primary flex items-center gap-0.5 hover:text-secondary transition-colors">
+            전체보기
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+<!-- Horizontal Bleed Container with 20% peek -->
+<div class="flex gap-3 overflow-x-auto no-scrollbar px-screen-edge pb-2">
+<!-- Outfit Card 1 -->
+<div class="shrink-0 w-[240px] rounded-xl overflow-hidden border border-surface-variant bg-surface-container-lowest flex flex-col shadow-[0px_8px_24px_-4px_rgba(17,17,17,0.04)]">
+<div class="relative w-full aspect-[3/4] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Editorial lookbook photograph of a woman wearing an oversized cashmere charcoal coat layered over a cream high-neck knit sweater and crisp pleated ecru trousers, set against an airy Parisian cafe terrace with warm beige tones, minimalist aesthetic, natural diffuse daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfOasPn0pjIzwKPARdziuFFmxHHBU6LfsxluTQTf-ovNjkswugrlycURA3J2F_YUV8vF-cRvBWI_2KcYSVJ2n5RO5Bih0udzIQLyImGPIp8WuYRxVyEtJzuKC_vl4LJOJpetqg7ANjB-879A125-EN7HsRCCUb-0kcDIdrj7PpxSmo0hDRxSzpSXrbQ5du9JVCFH9ENn14QClJyGEjiT05ZlY6expITupdOAPXk_9hAeKpn1VbHZo6eg">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-[9px] border border-white/60">
+                #미니멀클래식
+              </span>
+<button aria-label="Favorite" class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-surface/80 backdrop-blur-sm flex items-center justify-center text-primary active:scale-90">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-3">
+<div class="flex items-center justify-between text-on-surface-variant text-[10px] font-label-sm mb-1">
+<span class="">OFFICE &amp; WEEKEND</span>
+<span class="text-secondary font-bold">매칭률 97%</span>
+</div>
+<h4 class="font-headline-sm text-[15px] text-primary line-clamp-1 mb-2">오버사이즈 캐시미어 앙상블</h4>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-[10px] text-on-surface font-body-sm">#드롭숄더</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-[10px] text-on-surface font-body-sm">#와이드슬랙스</span>
+</div>
+</div>
+</div>
+<!-- Outfit Card 2 -->
+<div class="shrink-0 w-[240px] rounded-xl overflow-hidden border border-surface-variant bg-surface-container-lowest flex flex-col shadow-[0px_8px_24px_-4px_rgba(17,17,17,0.04)]">
+<div class="relative w-full aspect-[3/4] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Fashion editorial photography of a stylish individual modeling a structured terracotta tailored blazer with ivory silk midi skirt and sleek pointed-toe leather boots in a contemporary art museum foyer. Warm cinematic softbox lighting, luxury magazine editorial color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzCsaPcWaofMYyzwfGg7hM_cWp7vlaaKBjN1HK7tybTTvaJmHmQDMEPC4Tp4uy0fltuDFffTiQsV0Rav8VhnEZC1H3EOmPn8CoQWx0p23hmrCKZW6otILVYnL5Inoq0fCmlajH0HHjQnluiSOgH1-jZiI-j4BrNaNVSg1A4CLTxfeIOCiC4_n2B0CQz-XSElyjyojk1VkbjB_0VfLPJvIHc__kX6rTVczq5rGSzHSJ75bKZ5hahHOf3w">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-secondary font-label-sm text-[9px] border border-secondary/20 font-bold">
+                #모던테일러링
+              </span>
+<button aria-label="Favorite" class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-surface/80 backdrop-blur-sm flex items-center justify-center text-primary active:scale-90">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="p-3">
+<div class="flex items-center justify-between text-on-surface-variant text-[10px] font-label-sm mb-1">
+<span class="">GALLERY VISIT</span>
+<span class="text-secondary font-bold">매칭률 94%</span>
+</div>
+<h4 class="font-headline-sm text-[15px] text-primary line-clamp-1 mb-2">테라코타 숄더 블레이저 셋업</h4>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-[10px] text-on-surface font-body-sm">#실크스커트</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-[10px] text-on-surface font-body-sm">#스트레이트핏</span>
+</div>
+</div>
+</div>
+<!-- Outfit Card 3 (Peek Card) -->
+<div class="shrink-0 w-[240px] rounded-xl overflow-hidden border border-surface-variant bg-surface-container-lowest flex flex-col shadow-[0px_8px_24px_-4px_rgba(17,17,17,0.04)] opacity-90">
+<div class="relative w-full aspect-[3/4] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Editorial lookbook photo showing an understated luxury neutral toned outfit with an ivory merino knit cardigan, high-waisted fluid crepe trousers, and delicate gold jewelry in a sunlit architectural studio with serene shadows and calm beige palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsTuG5g75wghqeG4ieCcp0JSA11oh7zDRfBVQDMBrIlTgr6-muwW_AZvd1reWVeWq2A67jj5KyU7CffzP8oLFL7YjRHPM_kIxhCBLTU7TlE1ZKbtOj92lQ1tOfW9bn4q35XdzlEKSAcPgoKcxYb8dyWyBu1Z0cSlhhXrN7Q15RGStTDiUlJgV4BM61N9Q48A_LLhtwBZ8ETqzCGqa-ygDK4NB9Xy-ttRl39azRXftOSeEGWrHcGwH99Q">
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-[9px] border border-white/60">
+                #콰이어트럭셔리
+              </span>
+</div>
+<div class="p-3">
+<div class="flex items-center justify-between text-on-surface-variant text-[10px] font-label-sm mb-1">
+<span class="">DAILY BRUNCH</span>
+<span class="text-secondary font-bold">매칭률 96%</span>
+</div>
+<h4 class="font-headline-sm text-[15px] text-primary line-clamp-1 mb-2">소프트 메리노 니트 앙상블</h4>
+<div class="flex flex-wrap gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-[10px] text-on-surface font-body-sm">#크롭기장</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-[10px] text-on-surface font-body-sm">#플루이드팬츠</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Customer Editorial Review / Testimonial -->
+<section class="px-screen-edge py-space-lg">
+<div class="relative p-5 rounded-2xl bg-surface-container-low border border-surface-variant shadow-[0px_8px_24px_-4px_rgba(17,17,17,0.04)] overflow-hidden">
+<div class="absolute -right-3 -bottom-4 font-display-lg text-7xl text-surface-variant/40 select-none pointer-events-none">“</div>
+<div class="flex items-center gap-2 mb-3">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed-dim/30 text-[#6d5c2a] font-label-sm text-[9px] uppercase tracking-wider font-semibold border border-[#6d5c2a]/20">
+              EDITORIAL VERIFIED
+            </span>
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-headline-sm text-[16px] text-primary font-normal leading-relaxed italic mb-4">
+            “내 체형의 단점을 가리는 게 아니라, 오히려 독특한 매력으로 살려주는 스타일링을 제안받았어요. 아침마다 옷장 앞에서 서성이던 20분이 완전히 사라졌습니다.”
+          </p>
+<div class="flex items-center gap-3 pt-3 border-t border-surface-variant/80">
+<div class="w-9 h-9 rounded-full overflow-hidden border border-surface-variant bg-surface-container-high shrink-0">
+<img class="w-full h-full object-cover" data-alt="Editorial portrait of a refined Korean woman in her early 30s with understated minimal chic hair and warm natural lighting, wearing a beige cashmere turtleneck against a soft light studio background, subtle smile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBStI2ek_sM2oH45lrrf2-GxdqTsItH_irIokZiSEV9EfWGaiLXTvorJVsj9NS5bNTbsngcLzpg-_F4jA0zb8mP4w12gaW0aGUuZOegc1lRprhD6xamz_rHH6cS4Q4Jeg42wQxLYVGbaefrcZV08b0U5VeS2WzO9-rjLCvlqVRmQv5eX3r3YgGUKBJbaFMbdDG132F6db4R7PvuK9mdl8oJ-F09a-m53ha04C_ylXQNlUHBM_YC6ruZbg">
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-[13px] font-semibold text-primary">정수아 <span class="font-normal text-on-surface-variant text-[11px]">(패션 매거진 에디터)</span></span>
+<span class="font-label-sm text-[9px] text-secondary">골격 웨이브 · 웜 소프트 톤 추천 매칭</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Onboarding Push Banner -->
+<section class="px-screen-edge pb-space-2xl pt-2">
+<div class="p-6 rounded-2xl bg-primary text-surface relative overflow-hidden flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm text-secondary-fixed tracking-widest uppercase mb-1 font-bold">LIMITED COUTURE ACCESS</span>
+<h3 class="font-headline-md text-headline-md text-surface mb-2">당신만을 위한 첫 스타일링 큐레이션</h3>
+<p class="font-body-sm text-surface/75 text-body-sm mb-5 max-w-[260px]">
+            회원가입 즉시 골격 분석 리포트와 3가지 맞춤 풀착장 카드를 무료로 받아보세요.
+          </p>
+<button class="w-full h-12 rounded-full bg-secondary text-surface font-body-md font-semibold flex items-center justify-center gap-2 hover:bg-secondary/90 active:scale-95 transition-all">
+<span class="">지금 무료 분석 시작</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Shared Component JSON: 4 tabs with Discover active) -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center h-16 px-screen-edge max-w-md mx-auto bg-surface/95 dark:bg-surface-container-lowest/95 backdrop-blur-xl border-t border-surface-variant dark:border-outline-variant/20 shadow-[0px_16px_36px_-6px_rgba(17,17,17,0.08)]">
+<!-- Tab 1: Discover (Active) -->
+<button class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary relative after:content-[''] after:w-1 after:h-1 after:bg-secondary after:rounded-full after:mt-1 hover:text-secondary transition-colors duration-150 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-0.5">Discover</span>
+</button>
+<!-- Tab 2: Analyze -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 transition-opacity duration-150 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">accessibility_new</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-0.5">Analyze</span>
+</button>
+<!-- Tab 3: Lookbook -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 transition-opacity duration-150 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">style</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-0.5">Lookbook</span>
+</button>
+<!-- Tab 4: Saved -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline opacity-60 hover:opacity-100 transition-opacity duration-150 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-0.5">Saved</span>
+</button>
+</nav>
+</div>
+
+
+</body></html>
